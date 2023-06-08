@@ -1,5 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
-const Categories = () => (<div>Categories</div>);
+const Categories = () => (
+  <>
+    <Header />
+    <div>Categories</div>
+  </>
+);
 
 export default Categories;

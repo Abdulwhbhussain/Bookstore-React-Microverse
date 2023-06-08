@@ -1,5 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
-const Books = () => (<div>Books</div>);
+const Books = () => (
+  <>
+    <Header />
+    <div>Books</div>
+  </>
+);
 
 export default Books;
