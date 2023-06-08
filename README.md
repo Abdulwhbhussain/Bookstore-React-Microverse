@@ -5,7 +5,7 @@
   <img src="wahab_icon.jpeg" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse Math Magicians React Project Module 3</b></h3>
+  <h3><b>Microverse Bookstore React Project Module 3</b></h3>
 
 </div>
 
@@ -48,7 +48,7 @@
 
 # 📖 Microverse Math Magicians React Project Module 3 <a name="about-project"></a>
 
-This is My Math Magicians Project of Module 3 in Microverse which is A Dynamic and Responsive Web Application that allows the user to use calculator to perform simple Calculations. it contains 3 components home, calculator, quote. it is built with React and Redux. Use 'vercel --prod' to deploy the project to production. 
+The Bookstore is a website similar to the "Awesome Books" website built in the previous module. It has a simple UI that displays a list of books and allows you to add and remove books. it is built with React and Redux. Use 'vercel --prod' to deploy the project to production. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -81,9 +81,9 @@ This is My Math Magicians Project of Module 3 in Microverse which is A Dynamic a
 
 ### Key Features <a name="key-features"></a>
 
-- **Calculator**
-- **Friendly UX**
-- **Easy to use**
+- **Display Books**
+- **Add Book**
+- **Remove Book**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +120,7 @@ Run This Command:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Abdulwhbhussain/Math-Magicians-React-App.git
+  git clone https://github.com/Abdulwhbhussain/Bookstore-React-Microverse.git
 ```
 
 
@@ -151,7 +151,7 @@ To run the project, execute the following command:
 
 > Here is the Link to this Live Project:
 
-> https://math-magicians-react-app.vercel.app/
+> Coming Soon!
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
