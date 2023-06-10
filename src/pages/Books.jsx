@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../components/Header';
-import AddNewBook from '../components/AddNewBook';
+import BooksLogic from '../components/BooksLogic';
 
 const Books = () => (
   <>
     <Header />
-    <AddNewBook />
+    <BooksLogic />
   </>
 );
 
