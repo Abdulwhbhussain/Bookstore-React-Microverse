@@ -151,7 +151,7 @@ To run the project, execute the following command:
 
 > Here is the Link to this Live Project:
 
-> Coming Soon!
+> https://bookstore-react-redux-three.vercel.app
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
