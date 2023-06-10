@@ -1,7 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import AddNewBook from './AddNewBook';
 import BooksList from './BooksList';
+
+// Styled Div Container
+const StyledDiv = styled.div`
+padding-left: 10%;
+padding-right: 10%;
+margin-top: 50px;
+`;
+
+// Styled Horizontal Rule
+const StyledHr = styled.hr`
+border: 1px solid #e8e8e8;
+margin-top: 40px;
+margin-bottom: 40px;
+`;
 
 function getInitialBooks() {
   // getting stored items
@@ -32,10 +47,11 @@ const BooksLogic = () => {
   }, [books]);
 
   return (
-    <div>
+    <StyledDiv>
       <BooksList booksProps={books} delBook={delBook} />
+      <StyledHr />
       <AddNewBook addBookItem={addBookItem} />
-    </div>
+    </StyledDiv>
   );
 };
 

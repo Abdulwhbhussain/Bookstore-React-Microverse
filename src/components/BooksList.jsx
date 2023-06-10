@@ -1,8 +1,16 @@
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import BookItem from './BookItem';
 
+// Styled Unordered List
+const StyledUl = styled.ul`
+  list-style-type: none;
+  border: 3px solid #000;
+  padding: 0;
+`;
+
 const BooksList = ({ booksProps, delBook }) => (
-  <ul>
+  <StyledUl>
     {booksProps.map((book) => (
       <BookItem
         key={book.id}
@@ -10,7 +18,7 @@ const BooksList = ({ booksProps, delBook }) => (
         delBook={delBook}
       />
     ))}
-  </ul>
+  </StyledUl>
 );
 
 BooksList.propTypes = {

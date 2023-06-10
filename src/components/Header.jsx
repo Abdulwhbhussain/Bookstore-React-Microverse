@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const HeaderWrapper = styled.header`
-  width: 87.5rem;
+  width: 100vw;
   height: 5.938rem;
   margin: 0 0 2.375rem;
-  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
+  padding: 1.438rem 2.188rem 1.688rem 6.25rem;
   background-color: #fff;
   display: flex;
   flex-direction: row;
