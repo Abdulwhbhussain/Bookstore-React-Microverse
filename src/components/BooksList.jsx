@@ -5,7 +5,6 @@ import BookItem from './BookItem';
 // Styled Unordered List
 const StyledUl = styled.ul`
   list-style-type: none;
-  border: 3px solid #000;
   padding: 0;
 `;
 
