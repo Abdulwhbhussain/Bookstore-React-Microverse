@@ -94,10 +94,12 @@ const booksSlice = createSlice({
     });
     builder.addCase(addBook.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.bookItems.action.payload.item_id = [{
-        title: action.payload.title,
-        author: action.payload.author,
-        category: action.payload.category,
+      const item = action.payload;
+      const id = item.item_id;
+      state.bookItems[id] = [{
+        title: item.title,
+        author: item.author,
+        category: item.category,
       }];
     });
     builder.addCase(addBook.rejected, (state, action) => {
