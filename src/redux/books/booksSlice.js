@@ -70,7 +70,7 @@ const booksSlice = createSlice({
       state.error = action.error.message;
     });
     builder.addCase(addBook.pending, (state) => {
-      state.isLoading = true;
+      state.isLoading = false;
     });
     builder.addCase(addBook.fulfilled, (state, action) => {
       state.isLoading = false;
@@ -87,7 +87,7 @@ const booksSlice = createSlice({
       state.error = action.error.message;
     });
     builder.addCase(deleteBook.pending, (state) => {
-      state.isLoading = true;
+      state.isLoading = false;
     });
     builder.addCase(deleteBook.fulfilled, (state, action) => {
       state.isLoading = false;
