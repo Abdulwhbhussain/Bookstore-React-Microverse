@@ -75,8 +75,6 @@ const BooksLogic = () => {
       };
       return realBook;
     });
-    console.log(booksArr);
-    console.log(Object.keys(bookItems));
   }
 
   return (

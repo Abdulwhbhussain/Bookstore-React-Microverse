@@ -8,7 +8,6 @@ export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await axios.get(URLGETBOOKS);
     const data = await response.data;
-    console.log(data);
     return data;
   } catch (error) {
     return error;
@@ -21,7 +20,7 @@ export const addBook = createAsyncThunk('books/addBook', async (book) => {
     const response = await axios.post(URLGETBOOKS, book);
     const data = await response.data;
     alert(data);
-    return data;
+    return book;
   } catch (error) {
     return error;
   }
@@ -33,7 +32,7 @@ export const deleteBook = createAsyncThunk('books/deleteBook', async (id) => {
     const response = await axios.delete(`${URLGETBOOKS}/${id}`);
     const data = await response.data;
     alert(data);
-    return data;
+    return id;
   } catch (error) {
     return error;
   }
