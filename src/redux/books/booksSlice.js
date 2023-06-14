@@ -3,11 +3,36 @@ import axios from 'axios';
 
 const URLGETBOOKS = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wn1qJHo9MjP5T7pAjyNj/books';
 
+// Getting List of Books
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   try {
     const response = await axios.get(URLGETBOOKS);
     const data = await response.data;
     console.log(data);
+    return data;
+  } catch (error) {
+    return error;
+  }
+});
+
+// Adding a Book
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
+  try {
+    const response = await axios.post(URLGETBOOKS, book);
+    const data = await response.data;
+    alert(data);
+    return data;
+  } catch (error) {
+    return error;
+  }
+});
+
+// Deleting a Book
+export const deleteBook = createAsyncThunk('books/deleteBook', async (id) => {
+  try {
+    const response = await axios.delete(`${URLGETBOOKS}/${id}`);
+    const data = await response.data;
+    alert(data);
     return data;
   } catch (error) {
     return error;
@@ -61,6 +86,32 @@ const booksSlice = createSlice({
       state.bookItems = action.payload;
     });
     builder.addCase(fetchBooks.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error.message;
+    });
+    builder.addCase(addBook.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(addBook.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.bookItems.action.payload.item_id = [{
+        title: action.payload.title,
+        author: action.payload.author,
+        category: action.payload.category,
+      }];
+    });
+    builder.addCase(addBook.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error.message;
+    });
+    builder.addCase(deleteBook.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteBook.fulfilled, (state, action) => {
+      state.isLoading = false;
+      delete state.bookItems[action.payload];
+    });
+    builder.addCase(deleteBook.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error.message;
     });

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import AddNewBook from './AddNewBook';
 import BooksList from './BooksList';
-import { addItem, removeItem, fetchBooks } from '../redux/books/booksSlice';
+import { addBook, fetchBooks, deleteBook } from '../redux/books/booksSlice';
 
 // Styled Div Container
 const StyledDiv = styled.div`
@@ -36,18 +36,20 @@ const BooksLogic = () => {
   // const [books, setBooks] = useState(getInitialBooks());
 
   const delBook = (id) => {
-    dispatch(removeItem(id));
+    dispatch(deleteBook(id));
+    // dispatch(removeItem(id));
     // setBooks([...books.filter((book) => book.id !== id)]);
   };
 
   const addBookItem = (title, author) => {
     const newBook = {
-      id: uuidv4(),
+      item_id: uuidv4(),
       title,
       author,
       category: Math.floor(Math.random() * 10) < 5 ? 'Fiction' : 'Nonfiction',
     };
-    dispatch(addItem(newBook));
+    dispatch(addBook(newBook));
+    // dispatch(addItem(newBook));
     // setBooks([...books, newBook]);
   };
 
