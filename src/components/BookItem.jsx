@@ -25,7 +25,7 @@ const BookItem = ({ itemProp, delBook }) => (
 
 BookItem.propTypes = {
   itemProp: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     author: PropTypes.string.isRequired,
   }).isRequired,
