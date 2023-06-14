@@ -20,25 +20,13 @@ margin-top: 40px;
 margin-bottom: 40px;
 `;
 
-// function getInitialBooks() {
-//   // getting stored items
-//   const temp = localStorage.getItem('books');
-//   const savedBooks = JSON.parse(temp);
-//   return savedBooks || [];
-// }
-
 // other imported components here
 const BooksLogic = () => {
   const { bookItems, isLoading, error } = useSelector((state) => state.books);
-  // const [books, setBooks] = useState(bookItems);
   const dispatch = useDispatch();
-
-  // const [books, setBooks] = useState(getInitialBooks());
 
   const delBook = (id) => {
     dispatch(deleteBook(id));
-    // dispatch(removeItem(id));
-    // setBooks([...books.filter((book) => book.id !== id)]);
   };
 
   const addBookItem = (title, author) => {
@@ -49,13 +37,10 @@ const BooksLogic = () => {
       category: Math.floor(Math.random() * 10) < 5 ? 'Fiction' : 'Nonfiction',
     };
     dispatch(addBook(newBook));
-    // dispatch(addItem(newBook));
-    // setBooks([...books, newBook]);
   };
 
   useEffect(() => {
     dispatch(fetchBooks());
-    // const URLGETBOOKS = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wn1qJHo9MjP5T7pAjyNj/books';
     // fetch(URLGETBOOKS, {
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
