@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import AddNewBook from './AddNewBook';
 import BooksList from './BooksList';
-import { addItem, removeItem } from '../redux/books/booksSlice';
+import { addItem, removeItem, fetchBooks } from '../redux/books/booksSlice';
 
 // Styled Div Container
 const StyledDiv = styled.div`
@@ -29,7 +29,7 @@ margin-bottom: 40px;
 
 // other imported components here
 const BooksLogic = () => {
-  const { bookItems } = useSelector((state) => state.books);
+  const { bookItems, isLoading, error } = useSelector((state) => state.books);
   // const [books, setBooks] = useState(bookItems);
   const dispatch = useDispatch();
 
@@ -52,14 +52,49 @@ const BooksLogic = () => {
   };
 
   useEffect(() => {
+    dispatch(fetchBooks());
+    // const URLGETBOOKS = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/wn1qJHo9MjP5T7pAjyNj/books';
+    // fetch(URLGETBOOKS, {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({
+    //     item_id: uuidv4(),
+    //     title: 'After 100 Years',
+    //     author: 'Abdul W. Hussain',
+    //     category: 'Nonfiction',
+    //   }),
+    // }).then((response) => response.text()).then((result) => {
+    //   console.log(result);
+    // }).catch((error) => {
+    //   console.error('Error:', error);
+    // });
     // storing books items
     const temp = JSON.stringify(bookItems);
     localStorage.setItem('books', temp);
-  }, [bookItems]);
+  }, [dispatch]);
+
+  if (isLoading) return <div>Loading...</div>;
+
+  if (error) return <div>{error}</div>;
+
+  let booksArr = [];
+
+  if (typeof bookItems === 'object') {
+    booksArr = Object.keys(bookItems).map((key) => {
+      const book = bookItems[key][0];
+      const realBook = {
+        id: key,
+        ...book,
+      };
+      return realBook;
+    });
+    console.log(booksArr);
+    console.log(Object.keys(bookItems));
+  }
 
   return (
     <StyledDiv>
-      <BooksList booksProps={bookItems} delBook={delBook} />
+      <BooksList booksProps={booksArr} delBook={delBook} />
       <StyledHr />
       <AddNewBook addBookItem={addBookItem} />
     </StyledDiv>
