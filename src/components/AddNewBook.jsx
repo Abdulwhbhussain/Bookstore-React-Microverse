@@ -38,6 +38,18 @@ const AddNewBookContainer = styled.div`
       font-size: 1rem;
       line-height: 1.5;
     }
+    button {
+      border-radius: 5px;
+      background-color: #0290ff;
+      color: #fff;
+      outline: none;
+      border: none;
+      padding: 10px 20px;
+      &:hover {
+        cursor: pointer;
+        background-color: #0272c4;
+        color: #fff;
+      }
   }
 `;
 
