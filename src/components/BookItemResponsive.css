@@ -1,0 +1,30 @@
+@media only screen and (max-width: 600px) {
+  .completed {
+    display: none !important;
+  }
+
+  .vertical-seperator {
+    display: none !important;
+  }
+
+  .title-container {
+    padding: 0 !important;
+  }
+
+  .category {
+    margin: 0 !important;
+  }
+
+  .title {
+    margin: 0 !important;
+    width: 2.5rem !important;
+  }
+
+  .author {
+    margin: 0 !important;
+  }
+
+  .del-button {
+    width: 35% !important;
+  }
+}

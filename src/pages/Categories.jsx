@@ -7,8 +7,7 @@ const StyledDiv = styled.div`
 background-color: #fafafa;
 height: 100vh;
 width: 100vw;
-overflow: scroll;
-div {
+.style {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -19,7 +18,7 @@ div {
 const Categories = () => (
   <StyledDiv>
     <Header />
-    <div>Sorry for Inconvenience! We are Working on it.</div>
+    <div className="style">Sorry for Inconvenience! We are Working on it.</div>
   </StyledDiv>
 );
 

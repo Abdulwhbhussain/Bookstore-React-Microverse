@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AddNewBook from './AddNewBook';
 import BooksList from './BooksList';
 import { addBook, fetchBooks, deleteBook } from '../redux/books/booksSlice';
+import './loader.css';
 
 // Styled Div Container
 const StyledDiv = styled.div`
@@ -60,7 +61,7 @@ const BooksLogic = () => {
     localStorage.setItem('books', temp);
   }, [dispatch]);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="loader" />;
 
   if (error) return <div>{error}</div>;
 
