@@ -36,7 +36,7 @@ const StyledBookItemContainer = styled.li`
     }
     .title {
       width: 12.313rem;
-      height: 1.813rem;
+      height: fit-content;
       margin: 0.188rem 20.188rem 0 0;
       font-family: RobotoSlab;
       font-size: 1.375rem;
@@ -46,10 +46,11 @@ const StyledBookItemContainer = styled.li`
       line-height: normal;
       letter-spacing: -0.2px;
       color: #121212;
+      word-break: break-word;
     }
     .author {
       width: 6.688rem;
-      height: 1.188rem;
+      height: fit-content;
       margin: 0.25rem 0 0;
       font-family: RobotoSlab;
       font-size: 0.875rem;
