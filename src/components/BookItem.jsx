@@ -69,10 +69,28 @@ const StyledBookItemContainer = styled.li`
       line-height: normal;
       letter-spacing: normal;
       margin: 20px 0 0;
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #0290ff;
+        font-size: 0.875rem;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
   }
   .completed {
     width: 20%;
+    display: flex;
+    flex-direction: row;
     span {
       font-size: 1.5rem;
       font-weight: bold;
@@ -109,21 +127,26 @@ const BookItem = ({ itemProp, delBook }) => (
       <div className="actions">
         <span>Comments</span>
         <span>  |  </span>
-        <span>Remove</span>
+        <button type="button" onClick={() => delBook(itemProp.id)}>
+          <span>Remove</span>
+        </button>
         <span>  |  </span>
         <span>Edit</span>
       </div>
     </div>
     <div className="completed">
-      <span>0%</span>
-      <br />
-      Completed
+      <div className="complete-loader" />
+      <div style={{ marginLeft: '10px' }}>
+        <span>0%</span>
+        <br />
+        Completed
+      </div>
     </div>
     <div className="vertical-seperator">
       <hr style={{ width: '1px', height: '70%', color: '#e8e8e8' }} />
     </div>
     <div className="del-button">
-      <button type="button" onClick={() => delBook(itemProp.id)}>DELETE</button>
+      <button type="button" onClick={() => delBook(itemProp.id)}>UPDATE PROGRESS</button>
     </div>
   </StyledBookItemContainer>
 );
