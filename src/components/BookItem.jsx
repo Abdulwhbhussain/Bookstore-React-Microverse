@@ -60,6 +60,16 @@ const StyledBookItemContainer = styled.li`
       letter-spacing: normal;
       color: #4386bf;
     }
+    .actions {
+      color: #0290ff;
+      font-size: 0.875rem;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      margin: 20px 0 0;
+    }
   }
   .completed {
     width: 20%;
@@ -96,6 +106,13 @@ const BookItem = ({ itemProp, delBook }) => (
       <div className="category">{itemProp.category}</div>
       <div className="title">{itemProp.title}</div>
       <div className="author">{itemProp.author}</div>
+      <div className="actions">
+        <span>Comments</span>
+        <span>  |  </span>
+        <span>Remove</span>
+        <span>  |  </span>
+        <span>Edit</span>
+      </div>
     </div>
     <div className="completed">
       <span>0%</span>
