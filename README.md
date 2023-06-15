@@ -14,7 +14,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Microverse Math Magicians React Project Module 3 ](#-microverse-math-magicians-react-project-module-3-)
+- [📖 Microverse Bookstore React Project Module 3 ](#-microverse-bookstore-react-project-module-3-)
   - [🛠 Built With ](#-built-with-)
     - [1- Html](#1--html)
     - [2- CSS](#2--css)
@@ -46,7 +46,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Microverse Math Magicians React Project Module 3 <a name="about-project"></a>
+# 📖 Microverse Bookstore React Project Module 3 <a name="about-project"></a>
 
 The Bookstore is a website similar to the "Awesome Books" website built in the previous module. It has a simple UI that displays a list of books and allows you to add and remove books. it is built with React and Redux. Use 'vercel --prod' to deploy the project to production. 
 
