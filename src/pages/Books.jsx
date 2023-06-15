@@ -8,7 +8,6 @@ const StyledDiv = styled.div`
 background-color: #fafafa;
 height: 100vh;
 width: 100vw;
-overflow: scroll;
 `;
 
 const Books = () => (

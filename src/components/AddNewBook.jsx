@@ -59,8 +59,8 @@ function AddNewBook({ addBookItem }) {
       <AddNewBookContainer>
         <h1>Add New Book</h1>
         <form onSubmit={handleSubmit}>
-          <input onChange={handleChangeBook} value={title} type="text" id="title" name="title" placeholder="BOOK title" />
-          <input onChange={handleChangeAuthor} value={author} type="text" id="author" name="author" placeholder="Author" />
+          <input onChange={handleChangeBook} value={title} type="text" id="title" name="title" placeholder="BOOK title" required />
+          <input onChange={handleChangeAuthor} value={author} type="text" id="author" name="author" placeholder="Author" required />
           <button type="submit" value="Add Book">ADD BOOK</button>
         </form>
       </AddNewBookContainer>
