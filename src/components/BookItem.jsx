@@ -46,7 +46,6 @@ const StyledBookItemContainer = styled.li`
       line-height: normal;
       letter-spacing: -0.2px;
       color: #121212;
-      word-break: break-word;
     }
     .author {
       width: 6.688rem;
