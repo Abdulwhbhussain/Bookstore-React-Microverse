@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import './responsiveHeader.css';
 
 const HeaderWrapper = styled.header`
   width: 100%;
@@ -81,7 +82,7 @@ function Header() {
         </ul>
       </nav>
       <div>
-        <FontAwesomeIcon icon={faUser} />
+        <FontAwesomeIcon className="icon" icon={faUser} />
       </div>
     </HeaderWrapper>
   );
