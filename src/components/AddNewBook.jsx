@@ -24,12 +24,12 @@ const AddNewBookContainer = styled.div`
     color: #888;
   }
   form {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     input {
-      width: 60%;
       height: 2.5rem;
       margin: 0.5rem;
       padding: 0.5rem;
@@ -38,7 +38,14 @@ const AddNewBookContainer = styled.div`
       font-size: 1rem;
       line-height: 1.5;
     }
+    .bookTitle {
+      width: 50%;
+    }
+    .bookAuthor {
+      width: 35%;
+    }
     button {
+      width: 15%;
       border-radius: 5px;
       background-color: #0290ff;
       color: #fff;
@@ -84,8 +91,8 @@ function AddNewBook({ addBookItem }) {
       <AddNewBookContainer>
         <h1>ADD NEW BOOK</h1>
         <form onSubmit={handleSubmit}>
-          <input onChange={handleChangeBook} value={title} type="text" id="title" name="title" placeholder="BOOK title" required />
-          <input onChange={handleChangeAuthor} value={author} type="text" id="author" name="author" placeholder="Author" required />
+          <input className="bookTitle" onChange={handleChangeBook} value={title} type="text" id="title" name="title" placeholder="Book title" required />
+          <input className="bookAuthor" onChange={handleChangeAuthor} value={author} type="text" id="author" name="author" placeholder="Author" required />
           <button type="submit" value="Add Book">ADD BOOK</button>
         </form>
       </AddNewBookContainer>
