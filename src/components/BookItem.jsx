@@ -169,7 +169,7 @@ const BookItem = ({ itemProp, delBook }) => (
     <div className="vertical-seperator">
       <hr style={{ width: '1px', height: '70%', color: '#e8e8e8' }} />
     </div>
-    <div style={{ border: '2px solid red', height: '100px' }}>
+    <div style={{ height: '100px' }}>
       <div>
         <span className="chapter" style={{ marginBottom: '15px' }}>CURRENT CHAPTER</span>
         <br />
