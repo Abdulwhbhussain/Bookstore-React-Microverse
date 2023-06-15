@@ -5,15 +5,28 @@ import PropTypes from 'prop-types';
 const AddNewBookContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  width: 50%;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
   height: 20vh;
   background-color: #f5f5f5;
+  h1 {
+    margin: 0.5rem;
+    width: 10.875rem;
+    height: 1.5rem;
+    font-family: Montserrat;
+    font-size: 1.35rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    color: #888;
+  }
   form {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     input {
       width: 60%;
@@ -57,7 +70,7 @@ function AddNewBook({ addBookItem }) {
   return (
     <>
       <AddNewBookContainer>
-        <h1>Add New Book</h1>
+        <h1>ADD NEW BOOK</h1>
         <form onSubmit={handleSubmit}>
           <input onChange={handleChangeBook} value={title} type="text" id="title" name="title" placeholder="BOOK title" required />
           <input onChange={handleChangeAuthor} value={author} type="text" id="author" name="author" placeholder="Author" required />
