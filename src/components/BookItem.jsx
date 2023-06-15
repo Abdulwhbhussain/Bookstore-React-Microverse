@@ -100,8 +100,33 @@ const StyledBookItemContainer = styled.li`
     width: 20%;
     height: 100%;
   }
+  .chapter {
+    width: 7.875rem;
+    height: 1.125rem;
+    opacity: 0.5;
+    font-family: RobotoSlab;
+    font-size: 0.813rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #121212;
+  }
+  .one {
+    width: 4.688rem;
+  height: 1.313rem;
+  font-family: RobotoSlab;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+  margin-bottom: 10px !important;
+  }
   .del-button {
-    width: 20%;
     button {
       border-radius: 5px;
       background-color: #0290ff;
@@ -145,8 +170,15 @@ const BookItem = ({ itemProp, delBook }) => (
     <div className="vertical-seperator">
       <hr style={{ width: '1px', height: '70%', color: '#e8e8e8' }} />
     </div>
-    <div className="del-button">
-      <button type="button" onClick={() => delBook(itemProp.id)}>UPDATE PROGRESS</button>
+    <div>
+      <div>
+        <span className="chapter">CURRENT CHAPTER</span>
+        <br />
+        <span className="one">Chapter 1</span>
+      </div>
+      <div className="del-button">
+        <button type="button" onClick={() => delBook(itemProp.id)}>UPDATE PROGRESS</button>
+      </div>
     </div>
   </StyledBookItemContainer>
 );
